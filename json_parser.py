@@ -38,7 +38,7 @@ print(my_domains)
 print(pydig.query('d-do.ru', 'A'))
 print(pydig.query('www.d-do.ru', 'CNAME'))
 print(pydig.query('d-do.ru', 'NS'))
-
+print('hello')
 
 
 
