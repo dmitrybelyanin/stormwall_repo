@@ -11,9 +11,8 @@ def import_cached_l7_config(tmp_file='tmp.json'):
 
 
 def l7_config_as_a_dict(list_value, input_file):
-    current_file = open(input_file)
-    data = json.load(current_file)
-    current_file.close()
+    with open(input_file) as current_file:
+        data = json.load(current_file)
     return data[list_value]
 
 
@@ -28,7 +27,6 @@ def get_domains_in_a_service(domains_list, service_id):
 
 domains_settings_list = l7_config_as_a_dict('list', import_cached_l7_config())
 my_domains = get_domains_in_a_service(domains_settings_list, 24329)
-
 print(my_domains)
 
 
